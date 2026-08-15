@@ -1,0 +1,383 @@
+/* ================= GLOBAL ================= */
+/* Applies to entire page */
+body {
+    font-family: "Segoe UI", Arial, sans-serif; /* Clean readable font */
+    background-color: #f4f7fb;                 /* Light background */
+    margin-left:0px;                                 /* Remove default browser margin */
+    padding: 0 ;                                /* Remove default padding */
+}
+
+
+/* ================= HEADER ================= */
+/* Top navigation bar */
+header {
+    position: relative;                        /* Allows layering (z-index works) */
+    width: 100%;                               /* Full width header */
+    background: linear-gradient(135deg, #004aad, #00b4ff); /* Blue gradient */
+    display: flex;                             /* Flexbox layout */
+    padding: 15px 15px;                        /* Space inside header */
+    justify-content: space-between;            /* Logo left, nav right */
+    align-items: center;                       /* Vertically center items */
+    color: white;                              /* Text color */
+    z-index: 9999;                             /* Stay above other elements */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);    /* Shadow below header */
+}
+
+
+/* ================= LOGO ================= */
+/* Logo container (image + text) */
+.logo {
+    display: flex;                             /* Horizontal alignment */
+    align-items: center;                       /* Vertical center */
+    gap: 12px;                                /* Space between logo & text */
+}
+
+/* Logo image */
+.logo img {
+    max-height: 55px;                          /* Limit logo size */
+    border-radius: 50%;                        /* Circular logo */
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);/* Glow effect */
+    transition: transform 0.4s ease;           /* Smooth hover animation */
+}
+
+/* Logo hover animation */
+.logo img:hover {
+    transform: rotate(6deg) scale(1.15);       /* Rotate + zoom on hover */
+}
+
+/* Logo text */
+.logo h1 {
+    font-size: 1.7em;                          /* Large heading */
+    font-weight: 700;                          /* Bold text */
+    letter-spacing: 1.2px;                    /* Space between letters */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);  /* Text shadow */
+}
+
+
+/* ================= NAVIGATION ================= */
+/* Navigation menu list */
+nav ul {
+    list-style: none;                          /* Remove bullets */
+    display: flex;                             /* Horizontal menu */
+    gap: 18px;                                 /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation links */
+nav ul li a {
+    text-decoration: none;                     /* Remove underline */
+    color: white;                              /* Link color */
+    font-weight: 600;                          /* Semi-bold */
+    padding: 10px 18px;                        /* Button spacing */
+    border-radius: 30px;                       /* Rounded button */
+    position: relative;
+    transition: all 0.4s ease;                 /* Smooth hover effect */
+}
+
+/* Hover effect on nav links */
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.25);     /* Transparent white */
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);/* Glow */
+    transform: translateY(-2px);               /* Lift effect */
+}
+
+/* Active page link */
+nav ul li a.active {
+    background: white;                         /* White pill */
+    color: #004aad;                            /* Blue text */
+    box-shadow: 0 0 20px rgba(255,255,255,0.9);
+}
+
+/* ===== BUTTON STYLES ===== 
+.btn-edit {
+    background: #0d6efd;
+    color: #fff;
+    padding: 8px 18px;
+    text-decoration: none;
+    gap: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-edit:hover {
+    background: #084298;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: #fff;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-delete:hover {
+    background: #a71d2a;
+}
+
+.action-buttons a {
+    margin-right: 5px;
+}*/
+/* ===== ACTION BUTTON CONTAINER ===== */
+
+
+/* ================= SEARCH BAR (ENHANCED) ================= */
+
+/* Search section container */
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* Search / Filter form */
+.search-container form {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 92%;
+    max-width: 900px;
+    background: linear-gradient(135deg, #ffffff, #f6f9ff);
+    padding: 14px 18px;
+    border-radius: 60px;
+    box-shadow:
+        0 10px 30px rgba(0, 74, 173, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+/* Slight lift on hover */
+.search-container form:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 40px rgba(0, 74, 173, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Dropdown + input */
+.search-container select,
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #f2f6ff;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.search-container select:focus,
+.search-container input[type="text"]:focus {
+    background-color: #ffffff;
+    box-shadow:
+        0 0 0 3px rgba(0, 74, 173, 0.15),
+        inset 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Placeholder styling */
+.search-container input::placeholder {
+    color: #8a9ac4;
+    font-weight: 500;
+}
+
+ Search button 
+.search-container input[type="submit"],
+.search-container button {
+    background: linear-gradient(135deg, #004aad, #0066ff);
+    color: #ffffff;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 18px rgba(0, 74, 173, 0.35);
+    transition: all 0.3s ease;
+}
+
+
+/* Hover Effect */
+.search-container input[type="submit"]:hover,
+.search-container button:hover {
+    background: linear-gradient(45deg, #0056b3, #0096c7);
+    transform: translateY(-2px);
+}
+
+/* Button hover */
+.search-container input[type="submit"]:hover,
+.search-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 26px rgba(0, 74, 173, 0.45);
+}
+
+/* Reset link */
+.search-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #004aad;
+    font-weight: 600;
+    padding: 0 14px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Reset hover */
+.search-container a:hover {
+    background-color: rgba(0, 74, 173, 0.08);
+    color: #0066ff;
+}
+
+/* ================= MOBILE FRIENDLY ================= */
+@media (max-width: 768px) {
+    .search-container form {
+        flex-wrap: wrap;
+        border-radius: 20px;
+    }
+
+    .search-container select,
+    .search-container input[type="text"] {
+        flex: 100%;
+    }
+
+    .search-container input[type="submit"],
+    .search-container button {
+        width: 100%;
+    }
+}
+/* ================= PAGE TITLE ================= */
+.page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #003366;
+    margin: 30px 0 20px;
+    padding-bottom: 12px;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gradient underline */
+.page-title::after {
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #004aad, #0066ff);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+/* Smooth fade-in */
+@keyframes pageTitleFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    animation: pageTitleFade 0.6s ease-in-out;
+}
+
+
+
+/* ================= TABLE ================= */
+/* Table wrapper */
+.table-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 5 auto 50px;                       /* Center table */
+}
+
+/* Inventory table */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table cells */
+.inventory-table th,
+.inventory-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Table header */
+.inventory-table th {
+    background: linear-gradient(135deg, #004aad, #00b4ff);
+    color: white;
+    font-weight: 600;
+}
+
+/* Zebra striping */
+.inventory-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Row hover */
+.inventory-table tr:hover {
+    background-color: #e0f0ff;
+}
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+#footer {
+    background: linear-gradient(135deg, #6d0f36, #00b4ff);
+    color: white;
+    padding: 30px 15px;
+    margin-top: 40px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+}
+
+#footer h1 {
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+#footer p {
+    margin: 5px 0;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer .social-icons img {
+    margin: 8px;
+    transition: transform 0.3s ease;
+}
+
+#footer .social-icons img:hover {
+    transform: scale(1.2);
+}
